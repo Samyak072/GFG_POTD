@@ -1,0 +1,18 @@
+//Given an array of size N-1 such that it only contains distinct integers in the range of 1 to N. Find the missing element.
+//Function---missingNumber...
+
+
+class Solution {
+    int missingNumber(int array[], int n) {
+        int totalSum = (n * (n + 1)) / 2; // Sum of numbers from 1 to N using the formula (N * (N + 1)) / 2
+        int arraySum = 0;
+
+        // Calculate the sum of elements in the array
+        for (int i = 0; i < n - 1; i++) {
+            arraySum += array[i];
+        }
+
+        // The missing number is the difference between the total sum and the array sum
+        return totalSum - arraySum;
+    }
+}
