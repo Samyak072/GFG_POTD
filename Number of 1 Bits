@@ -1,0 +1,17 @@
+//Given a positive integer N, print count of set bits in it. 
+
+import java.util.*;
+import java.io.*;
+class Solution {
+    static int setBits(int N) {
+        {
+        int count = 0;
+
+        while (N > 0) {
+            count += N & 1;  // Check the rightmost bit
+            N >>= 1;        // Shift N to the right by 1 bit
+        }
+
+        return count;
+    }
+}
