@@ -1,0 +1,52 @@
+//You are given an array arr[] of N integers including 0. The task is to find the smallest positive number missing from the array.
+
+import java.util.*;
+import java.io.*;
+
+class Solution
+{
+    
+    static int missingNumber(int arr[], int size)
+    {
+    
+        int shift = segregate(arr, size);
+        
+    
+        int[] positiveArr = new int[size - shift];
+        int positiveSize = 0;
+        for (int i = shift; i < size; i++) {
+            positiveArr[positiveSize] = arr[i];
+            positiveSize++;
+        }
+        for (int i = 0; i < positiveSize; i++) {
+            int num = Math.abs(positiveArr[i]);
+            if (num <= positiveSize) {
+                positiveArr[num - 1] = -Math.abs(positiveArr[num - 1]);
+            }
+        }
+        
+        
+        for (int i = 0; i < positiveSize; i++) {
+            if (positiveArr[i] > 0) {
+                return i + 1;
+            }
+        }
+        
+        
+        return positiveSize + 1;
+    }
+    
+
+    static int segregate(int arr[], int size) {
+        int i = 0;
+        for (int j = 0; j < size; j++) {
+            if (arr[j] <= 0) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                i++;
+            }
+        }
+        return i;
+    }
+}
