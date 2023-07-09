@@ -1,4 +1,7 @@
+//Given an array arr[] of n non-negative integers. The task is to find the maximum of j - i (i<=j) subjected to the constraint of arr[i] <= arr[j].
 
+import java.util.*;
+import java.io.*;
 
 class Solution {
 
