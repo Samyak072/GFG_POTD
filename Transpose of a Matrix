@@ -1,4 +1,5 @@
 //Write a program to find the transpose of a square matrix of size N*N. Transpose of a matrix is obtained by changing rows to columns and columns to rows.
+//Below is the solution.
 
 import java.util.*;
 import java.io.*;
